@@ -1,3 +1,8 @@
+---
+import Navigation from "@/components/Navigation.astro";
+
+---
+
 <script>
   import "@/styles/globals.css";
 </script>
@@ -8,9 +13,15 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
     <title>Dali</title>
   </head>
-  <body class="light">
-    <slot />
+  <body>
+    <main class="md:py-8 py-6 px-6 font-jakarta md:px-8 min-h-screen bg-daliLightBg dark:bg-daliDarkBg dark:text-daliText text-daliTextLight ">
+      <Navigation />
+      <slot />  
+    </main>
   </body>
 </html>

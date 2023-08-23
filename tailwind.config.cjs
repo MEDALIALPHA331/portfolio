@@ -11,8 +11,12 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        jakarta: ["Plus Jakarta Sans", "sans-serif"],
+      },
       colors: {
         daliText: "#e6e6f0",
+        daliTextLight: "#000000",
         daliLightBg: "#e6e6f0",
         daliDarkBg: "#0f0f1a",
         daliPrimary: "#6F2CED",
