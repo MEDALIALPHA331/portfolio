@@ -12,6 +12,16 @@ module.exports = {
     },
     extend: {
       colors: {
+        daliText: "#e6e6f0",
+        daliLightBg: "#e6e6f0",
+        daliDarkBg: "#0f0f1a",
+        daliPrimary: "#6F2CED",
+        daliSecondary: "#090a10",
+        daliSecondaryLight: "#ced1e3",
+        daliAccentDarkOnly: "#6ef3c7",
+        daliAccentDark: "#d796e3",
+        daliAccentLight: "#9d2fb1",
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
