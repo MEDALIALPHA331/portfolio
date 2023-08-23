@@ -1,26 +1,11 @@
 ---
-import "@/styles/globals.css"
+import Layout from "../layouts/MainLayout.astro";
 ---
 
+<Layout>
+  <main class="flex min-h-screen bg-teal-200">
+    <h1 class="mx-auto text-4xl text-blue-400">Astro</h1>
+  </main>
+</Layout>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<main>
-			<h1 class="text-4xl text-blue-400">Astro</h1>
-		</main>
-	</body>
-</html>
-
-
-<style>
-	main {
-		min-height: 100vh;
-	}
-</style>
+<style></style>
