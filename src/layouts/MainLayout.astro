@@ -1,6 +1,6 @@
 ---
 import Navigation from "@/components/Navigation.astro";
-
+import { ViewTransitions } from 'astro:transitions';
 ---
 
 <script>
@@ -17,6 +17,7 @@ import Navigation from "@/components/Navigation.astro";
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
     <title>Dali</title>
+    <ViewTransitions />
   </head>
   <body>
     <main class="md:py-8 py-6 px-6 font-jakarta md:px-8 min-h-screen bg-daliLightBg dark:bg-daliDarkBg dark:text-daliText text-daliTextLight ">
