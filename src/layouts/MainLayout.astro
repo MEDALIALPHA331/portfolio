@@ -1,6 +1,6 @@
 ---
 import Navigation from "@/components/Navigation.astro";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <script>
@@ -13,16 +13,40 @@ import { ViewTransitions } from 'astro:transitions';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
     <title>Dali</title>
-    <ViewTransitions />
+    <ViewTransitions fallback="swap" />
   </head>
-  <body>
-    <main class="md:py-8 py-6 px-6 font-jakarta md:px-8 min-h-screen bg-daliLightBg dark:bg-daliDarkBg dark:text-daliText text-daliTextLight ">
-      <Navigation />
-      <slot />  
+
+  <body
+    class="bg-daliLightBg px-6 py-6 font-jakarta text-daliTextLight dark:bg-daliDarkBg dark:text-daliText md:px-8 md:py-8"
+  >
+    <Navigation />
+    <main>
+      <slot />
     </main>
   </body>
 </html>
+
+
+<script>
+  function colorMode() {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }
+  colorMode();
+
+  document.addEventListener('astro:after-swap', colorMode);
+</script>
