@@ -1,0 +1,13 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/MainLayout.astro";
+import me from "../assets/personal.jpg"
+
+const MyImage = me
+---
+
+<Layout>
+    <div class="pt-4">
+        <Image transition:name="name" transition:animate="initial" class={"rounded-md"} alt="" src={MyImage} width={250} height={500}></Image>
+    </div>
+</Layout>

@@ -1,13 +1,41 @@
 ---
 import ThemeIcon from "./ThemeIcon.astro";
+
+const NavigationData = [
+  {
+    name: "Home",
+    url: "/",
+  },
+  {
+    name: "Blog",
+    url: "/blog",
+  },
+  {
+    name: "About",
+    url: "/about",
+  },
+  // {
+  //   name: "Contact",
+  //   url: "/contact",
+  // },
+];
 ---
 
-<nav transition:persist class="flex items-end justify-end gap-4" >
-  <!-- <ToggleMode client:load /> -->
-  <a href="/">Home</a>
-  <a href="/blog">Menu</a>
+<nav transition:persist class="flex items-center justify-end gap-4">
+  <div class="flex items-center justify-center gap-4">
+    {
+      NavigationData.map(({ name, url }) => {
+        return (
+          <a
+            class="font-bold transition-all hover:text-daliPrimary hover:underline hover:underline-offset-1 hover:dark:text-daliAccentDarkOnly md:text-xl"
+            href={url}
+          >
+            {name}
+          </a>
+        );
+      })
+    }
+  </div>
 
   <ThemeIcon />
 </nav>
-
-

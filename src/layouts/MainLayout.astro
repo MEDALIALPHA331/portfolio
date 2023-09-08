@@ -24,29 +24,28 @@ import { ViewTransitions } from "astro:transitions";
   </head>
 
   <body
-    class="bg-daliLightBg px-6 py-6 font-jakarta text-daliTextLight dark:bg-daliDarkBg dark:text-daliText md:px-8 md:py-8"
+    class="bg-daliLightBg px-6 py-6 font-jakarta text-slate-800 dark:bg-daliDarkBg dark:text-daliText md:p-8"
   >
     <Navigation />
     <main>
       <slot />
     </main>
+
+    <script>
+      function colorMode() {
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }
+      colorMode();
+
+      document.addEventListener("astro:after-swap", colorMode);
+    </script>
   </body>
 </html>
-
-
-<script>
-  function colorMode() {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }
-  colorMode();
-
-  document.addEventListener('astro:after-swap', colorMode);
-</script>

@@ -1,39 +1,20 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/MainLayout.astro";
+import me from "../assets/personal.jpg"
+
+const MyImage = me
 ---
 
-<script>
-  const aside = document.querySelector("aside");
-  const btnOpenAside = document.querySelector("#asid-btn");
-  const btnCloseAside = document.querySelector("#close-aside-btn");
-
-  btnOpenAside?.addEventListener("click", () => {
-    aside?.classList.toggle("hidden");
-  });
-
-  btnCloseAside?.addEventListener("click", () => {
-    aside?.classList.toggle("hidden");
-  });
-</script>
-
 <Layout>
-  <h1 class="text-8xl text-daliPrimary">Hey</h1>
+  <div class="flex flex-col text-start gap-4 h-48">
+    <h1 class="text-8xl text-daliPrimary">Hey</h1>
+    <h2 class="text-5xl text-daliPrimary">I'm Med Ali</h2>
+  </div>
 
-  <aside
-    class={`hidden bg-daliPrimary bg-opacity-40 backdrop-blur-md bg-blend-difference flex flex-col justify-center items-start gap-4 p-8 w-1/2 min-h-full absolute inset-0`}
-  >
-
-
-    <div>1. Home</div>
-    <div>2. About</div>
-    <div>3. Blog</div>
-    <div>3. Newsletter</div>
-
-    <div class="mt-auto flex items-center justify-center gap-2">
-      ...here is some icons, rss stuff
-      <button id="close-aside-btn" class="text-red-500">close</button>
-    </div>
-  </aside>
+  <div class="pt-4">
+    <Image transition:name="name" transition:animate="initial" class={"rounded-md"} alt="" src={MyImage} width={250} height={500}></Image>
+  </div>
 </Layout>
 
 <style></style>

@@ -25,6 +25,7 @@
   .sun {
     fill: black;
   }
+
   .moon {
     fill: transparent;
   }
@@ -38,7 +39,6 @@
 </style>
 
 <script is:inline>
-
   function light() {
     localStorage.theme = "light";
     document.documentElement.classList.add("light");
@@ -49,7 +49,6 @@
     document.documentElement.classList.add("dark");
     document.documentElement.classList.remove("light");
   }
-
 
   const handleToggleClick = () => {
     const element = document.documentElement;

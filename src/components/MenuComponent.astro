@@ -1,0 +1,31 @@
+---
+
+---
+
+<aside
+  class={`hidden bg-daliPrimary bg-opacity-40 backdrop-blur-md bg-blend-difference flex flex-col justify-center items-start gap-4 p-8 w-1/2 min-h-full absolute inset-0`}
+>
+  <div>1. Home</div>
+  <div>2. About</div>
+  <div>3. Blog</div>
+  <div>3. Newsletter</div>
+
+  <div class="mt-auto flex items-center justify-center gap-2">
+    ...here is some icons, rss stuff
+    <button id="close-aside-btn" class="text-red-500">close</button>
+  </div>
+</aside>
+
+<script>
+  const aside = document.querySelector("aside");
+  const btnOpenAside = document.querySelector("#asid-btn");
+  const btnCloseAside = document.querySelector("#close-aside-btn");
+
+  btnOpenAside?.addEventListener("click", () => {
+    aside?.classList.toggle("hidden");
+  });
+
+  btnCloseAside?.addEventListener("click", () => {
+    aside?.classList.toggle("hidden");
+  });
+</script>
