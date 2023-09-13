@@ -76,3 +76,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+::selection {
+  color: #9d2fb1;
+  background-color: #6ef3c7;
+}
+
+/* p::selection {
+  color: white;
+  background-color: blue;
+} */

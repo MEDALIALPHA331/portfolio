@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       fontFamily: {
         jakarta: ["Plus Jakarta Sans", "sans-serif"],
+        dm: ["DM Serif Display", "serif"],
       },
       colors: {
         daliText: "#e6e6f0",

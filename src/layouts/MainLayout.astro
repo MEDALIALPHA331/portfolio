@@ -19,17 +19,22 @@ import { ViewTransitions } from "astro:transitions";
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
     <title>Dali</title>
     <ViewTransitions fallback="swap" />
   </head>
 
   <body
-    class="bg-daliLightBg px-6 py-6 font-jakarta text-slate-800 dark:bg-daliDarkBg dark:text-daliText md:p-8"
+    class="h-screen bg-daliLightBg px-6 py-6 font-jakarta text-slate-800 dark:bg-daliDarkBg dark:text-daliText md:p-8"
   >
     <Navigation />
-    <main>
-      <slot />
-    </main>
+
+    <slot />
 
     <script>
       function colorMode() {
@@ -47,5 +52,9 @@ import { ViewTransitions } from "astro:transitions";
 
       document.addEventListener("astro:after-swap", colorMode);
     </script>
-  </body>
+  </body><style is:global>
+    .balance {
+      text-wrap: balance;
+    }
+  </style>
 </html>

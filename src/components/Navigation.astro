@@ -7,12 +7,12 @@ const NavigationData = [
     url: "/",
   },
   {
-    name: "Blog",
-    url: "/blog",
-  },
-  {
     name: "About",
     url: "/about",
+  },
+  {
+    name: "Blog",
+    url: "/blog",
   },
   // {
   //   name: "Contact",
@@ -22,7 +22,7 @@ const NavigationData = [
 ---
 
 <nav transition:persist class="flex items-center justify-end gap-4">
-  <div class="flex items-center justify-center gap-4">
+  <div class="hidden md:flex items-center justify-center gap-4">
     {
       NavigationData.map(({ name, url }) => {
         return (
