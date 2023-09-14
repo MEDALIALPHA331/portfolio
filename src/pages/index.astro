@@ -5,6 +5,11 @@ import me from "../assets/personal.jpg";
 import { ButtonMain } from "@/components/MainButton";
 
 const MyImage = me;
+
+
+function DownloadCv() {
+    console.log("first")
+}
 ---
 
 <Layout>
@@ -37,16 +42,20 @@ const MyImage = me;
         My name is Mohamed Ali Khaled and I’m a passionate software engineer
         based in Sfax, Tunisia. With a computer science degree focusing on big
         data and data analytics, I enjoy exploring various technologies and
-        building personal projects in my free time. Click here to learn more.
+        building personal projects in my free time. Click learn more.
       </p>
 
       <div
-        class="flex w-full items-center justify-center py-4 md:justify-start"
+        class="flex w-full items-center justify-center md:flex-row gap-2 md:gap-4 flex-col py-4 md:justify-start"
       >
         <ButtonMain client:only="react">
           <a href="/about">About Me</a>
+        </ButtonMain>
+        <ButtonMain client:only="react">
+          <a target="_blank" href="https://drive.google.com/file/d/1GGkqI6pPPuEGNPZCrwAEbL8xLBxYplRD/view">Resume (CV)</a>
         </ButtonMain>
       </div>
     </div>
   </main>
 </Layout>
+
